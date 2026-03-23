@@ -1,4 +1,316 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Greenland Mining Stocks | Greenland Mining Capital</title><meta name="description" content="Investment analysis and stock data for Greenland and Arctic mining companies including GRML, SBSW, Implats, PLG, and more."><link rel="canonical" href="https://greenlandminingcapital.com/"><meta name="author" content="David Kim, CFA"><meta property="og:title" content="Greenland Mining Stocks | Greenland Mining Capital"><meta property="og:description" content="Investment analysis and stock data for Greenland and Arctic mining companies including GRML, SBSW, Implats, PLG, and more."><meta property="og:type" content="website"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/inline/greenland-mining-2026.CaG_nkJG.css">
+<!DOCTYPE html><html lang="en"> <head>
+<style>@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #0f172a;
+    --color-accent: #10b981;
+    --color-accent-light: #d1fae5;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-text: #0f172a;
+    --color-text-secondary: #475569;
+    --color-border: #e2e8f0;
+    --font-heading: 'Georgia', 'Times New Roman', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply antialiased;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    line-height: 1.25;
+  }
+}
+
+@layer components {
+  /* Navigation - clean white bar */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .site-nav-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media (min-width: 640px) {
+    .site-nav-inner { padding: 0.75rem 1.5rem; }
+  }
+  .site-logo {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  @media (min-width: 768px) {
+    .site-logo { font-size: 1.5rem; }
+  }
+  .nav-links {
+    display: none;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+  }
+  @media (min-width: 768px) {
+    .nav-links { display: flex; }
+  }
+  .nav-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--color-primary); }
+
+  /* Stock hero */
+  .stock-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #064e3b 100%);
+  }
+  .stock-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .stock-hero-content {
+    position: relative;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 3.5rem 1rem 4rem;
+  }
+  @media (min-width: 640px) {
+    .stock-hero-content { padding: 4.5rem 1.5rem 5rem; }
+  }
+  @media (min-width: 768px) {
+    .stock-hero-content { padding: 5rem 1.5rem 5.5rem; }
+  }
+  .stock-hero h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+  }
+  @media (min-width: 640px) {
+    .stock-hero h1 { font-size: 2.5rem; }
+  }
+  @media (min-width: 768px) {
+    .stock-hero h1 { font-size: 3rem; }
+  }
+  .stock-hero p {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 42rem;
+    line-height: 1.65;
+  }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 9999px;
+  }
+  .badge-green { background: #10b981; color: white; }
+  .badge-amber { background: #f59e0b; color: white; }
+
+  /* Hero CTAs */
+  .hero-cta-primary {
+    display: inline-block;
+    padding: 0.625rem 1.5rem;
+    background: #ffffff;
+    color: #0f172a;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .hero-cta-primary:hover { background: #f1f5f9; }
+  .hero-cta-outline {
+    display: inline-block;
+    padding: 0.625rem 1.5rem;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .hero-cta-outline:hover { background: rgba(255,255,255,0.1); }
+
+  /* Ticker bar */
+  .ticker-bar {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    overflow-x: auto;
+  }
+  .ticker-bar-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+  @media (min-width: 640px) {
+    .ticker-bar-inner { padding: 0.75rem 1.5rem; }
+  }
+  .ticker-item { display: flex; align-items: center; gap: 0.5rem; }
+  .ticker-symbol { font-weight: 700; color: var(--color-text); }
+  .ticker-exchange { color: var(--color-text-secondary); font-size: 0.75rem; }
+  .ticker-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+  }
+
+  /* Stock cards */
+  .stock-card {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .stock-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+  .stock-card-header {
+    padding: 1.25rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .stock-card-ticker { font-size: 1.125rem; font-weight: 700; color: var(--color-primary); }
+  .stock-card-exchange { font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: 0.25rem; background: #f1f5f9; font-weight: 500; color: var(--color-text-secondary); }
+  .stock-card-body { padding: 1.25rem; }
+  .stock-card-name { font-weight: 600; font-size: 1rem; color: var(--color-text); }
+  .stock-card-desc { font-size: 0.875rem; margin-top: 0.25rem; line-height: 1.6; color: var(--color-text-secondary); }
+
+  /* Metric pills */
+  .metric-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  .metric-pill { background: #f8fafc; border-radius: 0.5rem; padding: 0.5rem; text-align: center; }
+  .metric-value { font-size: 0.875rem; font-weight: 700; color: var(--color-text); }
+  .metric-label { font-size: 0.75rem; color: var(--color-text-secondary); }
+
+  /* Chart container */
+  .chart-container {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+  }
+  .chart-header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .chart-title { font-weight: 600; font-size: 0.875rem; color: var(--color-text); }
+  .chart-subtitle { font-size: 0.75rem; color: #94a3b8; }
+
+  /* Analyst note */
+  .analyst-note {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    padding: 1.25rem;
+    border-left: 4px solid #10b981;
+  }
+  .analyst-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #10b981; }
+  .analyst-text { margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.65; color: var(--color-text-secondary); }
+
+  /* Data table */
+  .data-table { width: 100%; font-size: 0.875rem; border-collapse: collapse; }
+  .data-table thead th { padding: 0.75rem; text-align: left; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-secondary); border-bottom: 2px solid #e2e8f0; }
+  .data-table tbody td { padding: 0.75rem; border-bottom: 1px solid #e2e8f0; color: var(--color-text-secondary); }
+  .data-table tbody tr:hover { background: #f8fafc; }
+  .data-table .highlight-row { font-weight: 600; background: #ecfdf5; }
+  .data-table .highlight-row td { color: var(--color-text); }
+
+  /* Section headers */
+  .section-header { font-size: 1.5rem; font-weight: 700; color: var(--color-text); }
+  @media (min-width: 768px) { .section-header { font-size: 1.875rem; } }
+  .section-subheader { margin-top: 0.5rem; font-size: 1rem; color: var(--color-text-secondary); max-width: 42rem; }
+
+  /* Content wrapper */
+  .content-section { max-width: 72rem; margin: 0 auto; padding: 4rem 1rem; }
+  @media (min-width: 640px) { .content-section { padding: 4rem 1.5rem; } }
+
+  /* Footer */
+  .site-footer {
+    border-top: 1px solid #e2e8f0;
+    margin-top: 5rem;
+    padding: 3rem 0;
+    background: #ffffff;
+  }
+  .footer-inner { max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
+  @media (min-width: 640px) { .footer-inner { padding: 0 1.5rem; } }
+  .footer-grid { display: grid; gap: 2.5rem; }
+  @media (min-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr 1fr; } }
+  .footer-heading { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary); margin-bottom: 0.75rem; }
+  .footer-text { font-size: 0.875rem; line-height: 1.65; color: var(--color-text-secondary); }
+  .footer-bottom { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.875rem; color: var(--color-text-secondary); }
+
+  /* Mobile menu */
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 60; background: #ffffff; }
+  .mobile-menu.active { display: block; }
+  .mobile-menu a { display: block; padding: 0.75rem 0; font-size: 1.125rem; font-weight: 500; border-bottom: 1px solid #e2e8f0; color: var(--color-text); text-decoration: none; }
+
+  /* Center text */
+  .text-center { text-align: center; }
+
+  /* Grid helpers */
+  .grid-2 { display: grid; gap: 1.5rem; }
+  @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+  .grid-3 { display: grid; gap: 1.5rem; }
+  @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+  .grid-2-1 { display: grid; gap: 1.5rem; }
+  @media (min-width: 1024px) { .grid-2-1 { grid-template-columns: 2fr 1fr; } }
+}
+</style><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Greenland Mining Stocks | Greenland Mining Capital</title><meta name="description" content="Investment analysis and stock data for Greenland and Arctic mining companies including GRML, SBSW, Implats, PLG, and more."><link rel="canonical" href="https://greenlandminingcapital.com/"><meta name="author" content="David Kim, CFA"><meta property="og:title" content="Greenland Mining Stocks | Greenland Mining Capital"><meta property="og:description" content="Investment analysis and stock data for Greenland and Arctic mining companies including GRML, SBSW, Implats, PLG, and more."><meta property="og:type" content="website"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <style>h1,h2,h3,h4,h5,h6{font-family:Playfair Display,Georgia,serif}
 </style></head> <body> <header class="site-nav"> <div class="site-nav-inner"> <a href="/" class="site-logo">Greenland Mining Capital</a> <div class="nav-links"> <a href="/">Stocks</a> <a href="/skaergaard">Skaergaard</a> <a href="/comparisons">Comparisons</a> <a href="/about">About</a> </div> <button id="mobile-toggle" class="md:hidden p-2" aria-label="Menu"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> </div> </header> <div id="mobile-menu" class="mobile-menu" style="display:none;"> <div class="p-6"> <div class="flex justify-between items-center mb-8"> <span class="site-logo text-lg">Greenland Mining Capital</span> <button id="mobile-close" class="p-2" aria-label="Close"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path> </svg> </button> </div> <a href="/">Stocks</a> <a href="/skaergaard">Skaergaard</a> <a href="/comparisons">Comparisons</a> <a href="/about">About</a> </div> </div> <main>  <section class="stock-hero"> <div class="stock-hero-content"> <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;"> <span class="badge badge-green">Live Research</span> <span class="badge badge-amber">CFA Analysis</span> </div> <h1>Greenland &amp; Arctic Mining Stocks</h1> <p>Independent equity research on publicly traded companies in the Greenland and broader Arctic mining sector. Coverage includes resource analysis, valuation metrics, and comparative positioning.</p> <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:0.75rem;"> <a href="#grml" class="hero-cta-primary">GRML Deep Dive</a> <a href="#peers" class="hero-cta-outline">Peer Comparison</a> </div> </div> </section>  <div class="ticker-bar"> <div class="ticker-bar-inner"> <span class="ticker-label">Coverage</span> <span class="ticker-item"><span class="ticker-symbol">GRML</span> <span class="ticker-exchange">NASDAQ</span></span> <span class="ticker-item"><span class="ticker-symbol">SBSW</span> <span class="ticker-exchange">NYSE</span></span> <span class="ticker-item"><span class="ticker-symbol">IMP</span> <span class="ticker-exchange">NYSE</span></span> <span class="ticker-item"><span class="ticker-symbol">PLG</span> <span class="ticker-exchange">NYSE</span></span> <span class="ticker-item"><span class="ticker-symbol">GENM</span> <span class="ticker-exchange">LON</span></span> <span class="ticker-item"><span class="ticker-symbol">IVN</span> <span class="ticker-exchange">TSX</span></span> <span class="ticker-item"><span class="ticker-symbol">AMRQ</span> <span class="ticker-exchange">NASDAQ</span></span> </div> </div>  <section id="grml" class="content-section"> <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;"> <h2 class="section-header">Greenland Mines (GRML)</h2> <span class="badge badge-green" style="font-size:0.6875rem;">Featured Coverage</span> </div> <p class="section-subheader">NASDAQ: GRML &middot; Formerly Klotho Neurosciences &middot; Rebranded March 12, 2026</p> <div class="grid-2-1" style="margin-top:2rem;"> <!-- GRML Chart --> <div class="chart-container"> <div class="chart-header"> <span class="chart-title">GRML - Daily Chart</span> <span class="chart-subtitle">NASDAQ</span> </div> <div style="padding:0.5rem;"> <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_chart&symbol=NASDAQ%3AGRML&interval=D&theme=light&style=1&locale=en&toolbar_bg=%23f1f3f6&enable_publishing=false&hide_top_toolbar=false&hide_side_toolbar=false&allow_symbol_change=true" style="width:100%;height:350px;border:none;" loading="lazy"></iframe> </div> </div> <!-- GRML Info --> <div> <div class="stock-card"> <div class="stock-card-header"> <span class="stock-card-ticker">GRML</span> <span class="stock-card-exchange">NASDAQ</span> </div> <div class="stock-card-body"> <p class="stock-card-name">Greenland Mines Ltd.</p> <p class="stock-card-desc">Owner of the Skaergaard PGM-Gold project in East Greenland. Largest undeveloped Western PGM deposit with 25.4M oz PdEq + 23.5M oz AuEq.</p> <div class="metric-row"> <div class="metric-pill"><p class="metric-value">$68B</p><p class="metric-label">In-Situ Value</p></div> <div class="metric-pill"><p class="metric-value">NI 43-101</p><p class="metric-label">Resource Std</p></div> <div class="metric-pill"><p class="metric-value">25.4M</p><p class="metric-label">Oz PdEq</p></div> <div class="metric-pill"><p class="metric-value">80%</p><p class="metric-label">Ownership</p></div> </div> </div> </div> <div class="analyst-note" style="margin-top:1rem;"> <p class="analyst-label">Analyst Note</p> <p class="analyst-text">GRML represents a pure-play on the Skaergaard deposit, the largest undeveloped Western PGM resource. The rebrand from Klotho Neurosciences in March 2026 signals a full pivot to mineral exploration. Key catalysts include permitting progress under Greenland's new exploitation framework and growing Western demand for non-Russian PGM supply.</p> </div> </div> </div> </section>  <section id="peers" class="content-section" style="padding-top:0;"> <h2 class="section-header">Peer Universe</h2> <p class="section-subheader">Publicly traded PGM and Arctic mining companies for comparative analysis.</p> <div class="grid-3" style="margin-top:2.5rem;"> <!-- SBSW --> <div class="stock-card"> <div class="stock-card-header"> <span class="stock-card-ticker">SBSW</span> <span class="stock-card-exchange">NYSE</span> </div> <div class="stock-card-body"> <p class="stock-card-name">Sibanye-Stillwater</p> <p class="stock-card-desc">South African PGM and gold producer. Western world's largest PGM miner.</p> <div class="metric-row"> <div class="metric-pill"><p class="metric-value">18.2M</p><p class="metric-label">Oz PdEq</p></div> <div class="metric-pill"><p class="metric-value">Producer</p><p class="metric-label">Status</p></div> </div> </div> </div> <!-- IMP --> <div class="stock-card"> <div class="stock-card-header"> <span class="stock-card-ticker">IMP</span> <span class="stock-card-exchange">NYSE</span> </div> <div class="stock-card-body"> <p class="stock-card-name">Impala Platinum</p> <p class="stock-card-desc">South African PGM producer. Major Western PGM supply source.</p> <div class="metric-row"> <div class="metric-pill"><p class="metric-value">15.6M</p><p class="metric-label">Oz PdEq</p></div> <div class="metric-pill"><p class="metric-value">Producer</p><p class="metric-label">Status</p></div> </div> </div> </div> <!-- PLG --> <div class="stock-card"> <div class="stock-card-header"> <span class="stock-card-ticker">PLG</span> <span class="stock-card-exchange">NYSE</span> </div> <div class="stock-card-body"> <p class="stock-card-name">Platinum Group Metals</p> <p class="stock-card-desc">Waterberg PGM project, South Africa. Large-scale low-cost development.</p> <div class="metric-row"> <div class="metric-pill"><p class="metric-value">14.6M</p><p class="metric-label">Oz PdEq</p></div> <div class="metric-pill"><p class="metric-value">Development</p><p class="metric-label">Status</p></div> </div> </div> </div> <!-- GENE --> <div class="stock-card"> <div class="stock-card-header"> <span class="stock-card-ticker">GENM</span> <span class="stock-card-exchange">LON</span> </div> <div class="stock-card-body"> <p class="stock-card-name">Gemfields Group</p> <p class="stock-card-desc">Colored gemstone miner. Kagem emerald and Montepuez ruby mines.</p> <div class="metric-row"> <div class="metric-pill"><p class="metric-value">Gemstones</p><p class="metric-label">Commodity</p></div> <div class="metric-pill"><p class="metric-value">Producer</p><p class="metric-label">Status</p></div> </div> </div> </div> <!-- IVN --> <div class="stock-card"> <div class="stock-card-header"> <span class="stock-card-ticker">IVN</span> <span class="stock-card-exchange">TSX</span> </div> <div class="stock-card-body"> <p class="stock-card-name">Ivanhoe Mines</p> <p class="stock-card-desc">Platreef PGM project, South Africa. Tier-1 PGM, nickel, copper, gold.</p> <div class="metric-row"> <div class="metric-pill"><p class="metric-value">Platreef</p><p class="metric-label">Project</p></div> <div class="metric-pill"><p class="metric-value">Development</p><p class="metric-label">Status</p></div> </div> </div> </div> <!-- AMRQ --> <div class="stock-card"> <div class="stock-card-header"> <span class="stock-card-ticker">AMRQ</span> <span class="stock-card-exchange">NASDAQ</span> </div> <div class="stock-card-body"> <p class="stock-card-name">American Rare Earths</p> <p class="stock-card-desc">Rare earth exploration, Halleck Creek WY. Domestic US supply chain.</p> <div class="metric-row"> <div class="metric-pill"><p class="metric-value">REE</p><p class="metric-label">Commodity</p></div> <div class="metric-pill"><p class="metric-value">Exploration</p><p class="metric-label">Status</p></div> </div> </div> </div> </div> </section>  <section class="content-section" style="padding-top:0;"> <h2 class="section-header">Relative Performance</h2> <p class="section-subheader">Comparative price performance across the PGM and Arctic mining sector.</p> <div class="chart-container" style="margin-top:2rem;"> <div class="chart-header"> <span class="chart-title">PGM Miners - Comparative Chart</span> </div> <div style="padding:0.5rem;"> <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=peer_chart&symbol=NASDAQ%3AGRML&interval=weekly&theme=light&style=1&locale=en&toolbar_bg=%23f1f3f6&enable_publishing=false&withdateranges=1" style="width:100%;height:400px;border:none;" loading="lazy"></iframe> </div> </div> </section>  <section class="content-section" style="padding-top:0;"> <h2 class="section-header">Resource Comparison Matrix</h2> <p class="section-subheader">Side-by-side PGM resource comparison across major deposits.</p> <div style="margin-top:2rem;overflow-x:auto;border-radius:0.75rem;border:1px solid #e2e8f0;"> <table class="data-table"> <thead> <tr> <th>Company</th> <th>Ticker</th> <th>Exchange</th> <th style="text-align:right;">PdEq (M oz)</th> <th style="text-align:right;">AuEq (M oz)</th> <th>Jurisdiction</th> <th>Status</th> </tr> </thead> <tbody> <tr class="highlight-row"> <td>Greenland Mines</td> <td style="font-weight:700;">GRML</td> <td>NASDAQ</td> <td style="text-align:right;color:#10b981;">25.4</td> <td style="text-align:right;color:#10b981;">23.5</td> <td>Greenland</td> <td>Development</td> </tr> <tr> <td>Sibanye-Stillwater</td> <td style="font-weight:700;">SBSW</td> <td>NYSE</td> <td style="text-align:right;">18.2</td> <td style="text-align:right;">12.8</td> <td>South Africa</td> <td>Producer</td> </tr> <tr> <td>Impala Platinum</td> <td style="font-weight:700;">IMP</td> <td>NYSE</td> <td style="text-align:right;">15.6</td> <td style="text-align:right;">8.4</td> <td>South Africa</td> <td>Producer</td> </tr> <tr> <td>Platinum Group Metals</td> <td style="font-weight:700;">PLG</td> <td>NYSE</td> <td style="text-align:right;">14.6</td> <td style="text-align:right;">3.2</td> <td>South Africa</td> <td>Development</td> </tr> <tr> <td>Ivanhoe Mines</td> <td style="font-weight:700;">IVN</td> <td>TSX</td> <td style="text-align:right;">11.2</td> <td style="text-align:right;">6.8</td> <td>South Africa</td> <td>Development</td> </tr> <tr style="opacity:0.5;"> <td>Nornickel</td> <td style="font-weight:700;">GMKN</td> <td>MCX</td> <td style="text-align:right;">42.1</td> <td style="text-align:right;">31.2</td> <td>Russia</td> <td style="color:#ef4444;">Sanctioned</td> </tr> </tbody> </table> </div> </section>  <section class="content-section" style="padding-top:0;max-width:56rem;"> <h2 class="section-header">Sector Outlook</h2> <p class="section-subheader">Investment thesis for the Western PGM supply chain.</p> <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1.5rem;"> <div class="analyst-note"> <p class="analyst-label">Thesis: Supply Gap</p> <p class="analyst-text">Russia (primarily Nornickel) historically supplied ~40% of global palladium production. Post-2022 sanctions have created a structural supply deficit in Western PGM markets. This creates a multi-year window for new Western supply sources to capture market share at favorable pricing.</p> </div> <div class="analyst-note"> <p class="analyst-label">Catalyst: Greenland Permitting</p> <p class="analyst-text">Greenland's updated 2025 exploitation licensing framework represents a step-change in jurisdictional risk. The EU, UK, Canada, and France have all signaled investment interest in Greenland's mineral sector. The Skaergaard project, with its $68B in-situ value and NI 43-101 compliance, is positioned as the primary beneficiary.</p> </div> <div class="analyst-note"> <p class="analyst-label">Risk Factors</p> <p class="analyst-text">Key risks include: (1) Greenland permitting timeline uncertainty, (2) development capital requirements, (3) PGM price volatility tied to auto industry demand, (4) competition from battery-electric vehicles reducing PGM demand, (5) political risk in Arctic jurisdictions. Not financial advice.</p> </div> </div> </section> <p style="padding:2rem 0;text-align:center;font-size:0.875rem;color:#94a3b8;">
 Analysis by David Kim, CFA &middot; Greenland Mining Capital &middot; Not Financial Advice
