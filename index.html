@@ -11,90 +11,223 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:0;font-family:'Inter',-apple-system,sans-serif;line-height:1.7;color:#1a202c;background:#f7fafc}h1,h2,h3,h4,h5,h6{font-family:'Merriweather',Georgia,serif;color:#1a202c;line-height:1.25;margin:0 0 .5em}a{color:#38b2ac;text-decoration:none}a:hover{text-decoration:underline}.site-nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,.06)}.nav-inner{max-width:72rem;margin:0 auto;padding:.875rem 1rem;display:flex;align-items:center;justify-content:space-between}@media(min-width:640px){.nav-inner{padding:.875rem 1.5rem}}.site-logo{font-family:'Merriweather',Georgia,serif;font-size:1.25rem;font-weight:700;color:#1a365d;text-decoration:none;letter-spacing:-.02em}@media(min-width:768px){.site-logo{font-size:1.5rem}}.hero{overflow:hidden;background:linear-gradient(135deg,#1a365d 0%,#1a365ddd 100%);padding:3rem 1rem}@media(min-width:640px){.hero{padding:4rem 1.5rem}}@media(min-width:768px){.hero{padding:5rem 1.5rem}}.hero-inner{max-width:72rem;margin:0 auto}.hero h1{font-size:2rem;font-weight:800;color:#fff;line-height:1.15}@media(min-width:640px){.hero h1{font-size:2.5rem}}@media(min-width:768px){.hero h1{font-size:3rem}}.hero .subtitle{margin-top:1rem;font-size:1.125rem;color:rgba(255,255,255,.7);max-width:42rem;line-height:1.65}.hero-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}.badge{display:inline-block;padding:.2rem .65rem;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;border-radius:9999px}.badge-accent{background:#38b2ac;color:white}.hero-ctas{margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:.75rem}.cta-primary{display:inline-block;padding:.625rem 1.5rem;background:#fff;color:#1a365d;font-weight:600;border-radius:.5rem;font-size:.9375rem;text-decoration:none}.cta-primary:hover{opacity:.9;text-decoration:none}.cta-outline{display:inline-block;padding:.625rem 1.5rem;border:2px solid #fff;color:#fff;font-weight:600;border-radius:.5rem;font-size:.9375rem;text-decoration:none}.cta-outline:hover{opacity:.85;text-decoration:none}.section{max-width:72rem;margin:0 auto;padding:3.5rem 1rem}@media(min-width:640px){.section{padding:3.5rem 1.5rem}}.section-title{font-size:1.5rem;font-weight:700}@media(min-width:768px){.section-title{font-size:1.875rem}}.card{background:#fff;border:1px solid #e2e8f0;border-radius:.75rem;overflow:hidden;transition:box-shadow .2s,transform .2s}.card:hover{box-shadow:0 8px 25px rgba(0,0,0,.08);transform:translateY(-2px)}.card-body{padding:1.25rem}.card-title{font-size:1.0625rem;font-weight:600;color:#1a202c;margin:0}.card-desc{font-size:.875rem;margin-top:.375rem;color:#718096;line-height:1.6}.grid-2{display:grid;gap:1.5rem}@media(min-width:768px){.grid-2{grid-template-columns:1fr 1fr}}.tag{display:inline-block;padding:.15rem .5rem;font-size:.7rem;font-weight:500;border-radius:.25rem;background:#38b2ac15;color:#38b2ac;margin-right:.25rem}.ticker-bar{background:#fff;border-bottom:1px solid #e2e8f0;overflow-x:auto}.ticker-inner{max-width:72rem;margin:0 auto;display:flex;align-items:center;gap:1.75rem;padding:.625rem 1rem;font-size:.8125rem;white-space:nowrap}.ticker-label{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#a0aec0}.ticker-sym{font-weight:700;color:#1a202c}.ticker-exch{font-size:.6875rem;color:#a0aec0;margin-left:.25rem}.footer{border-top:1px solid #e2e8f0;margin-top:4rem;padding:2.5rem 0;background:#fff}.footer-inner{max-width:72rem;margin:0 auto;padding:0 1rem}.footer-grid{display:grid;gap:2rem}@media(min-width:768px){.footer-grid{grid-template-columns:1fr 1fr 1fr}}.footer-heading{font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#1a365d;margin-bottom:.75rem}.footer-text{font-size:.8125rem;line-height:1.6;color:#718096}.footer-bottom{margin-top:2rem;padding-top:1.25rem;border-top:1px solid #e2e8f0;text-align:center;font-size:.8125rem;color:#a0aec0}</style>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;color:#e2e8f0;background:#0f172a}
+h1,h2,h3,h4,h5,h6{font-family:'Merriweather',Georgia,serif;color:#f1f5f9;line-height:1.25;margin:0 0 .5em}
+a{color:#1abc9c;text-decoration:none;transition:color .15s}
+a:hover{color:#2dd4bf;text-decoration:none}
+
+/* Nav */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(15,23,42,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{max-width:80rem;margin:0 auto;padding:.875rem 1rem;display:flex;align-items:center;justify-content:space-between}
+@media(min-width:640px){.nav-inner{padding:.875rem 1.5rem}}
+.site-logo{font-family:'Merriweather',Georgia,serif;font-size:1.2rem;font-weight:700;color:#f1f5f9;text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:.5rem}
+@media(min-width:768px){.site-logo{font-size:1.35rem}}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#1abc9c,#16a085);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:#fff}
+.nav-links{display:none;align-items:center;gap:1.5rem;font-size:.8125rem;font-weight:500}
+@media(min-width:768px){.nav-links{display:flex}}
+.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s}
+.nav-links a:hover{color:#1abc9c}
+
+/* Ticker Tape */
+.ticker-tape{background:#0c1222;border-bottom:1px solid rgba(255,255,255,.04)}
+
+/* Hero / Chart Section */
+.chart-section{background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);padding:2rem 0 0}
+@media(min-width:768px){.chart-section{padding:2.5rem 0 0}}
+.chart-header{max-width:80rem;margin:0 auto;padding:0 1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+@media(min-width:640px){.chart-header{padding:0 1.5rem 1.5rem}}
+.chart-header h2{font-size:1.25rem;font-weight:700;color:#f1f5f9;margin:0}
+@media(min-width:768px){.chart-header h2{font-size:1.5rem}}
+.chart-badge{display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .75rem;background:rgba(26,188,156,.12);border:1px solid rgba(26,188,156,.2);border-radius:9999px;font-size:.6875rem;font-weight:600;color:#1abc9c;text-transform:uppercase;letter-spacing:.05em}
+.chart-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#1abc9c;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.chart-wrap{max-width:80rem;margin:0 auto;padding:0 1rem 2rem}
+@media(min-width:640px){.chart-wrap{padding:0 1.5rem 2rem}}
+.chart-container{background:#131c2e;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden}
+
+/* Content Area */
+.content-area{background:#f8fafc;min-height:60vh}
+.section{max-width:80rem;margin:0 auto;padding:3.5rem 1rem}
+@media(min-width:640px){.section{padding:3.5rem 1.5rem}}
+.section-title{font-size:1.5rem;font-weight:700;color:#0f172a}
+@media(min-width:768px){.section-title{font-size:1.875rem}}
+.section-subtitle{margin-top:.375rem;font-size:.9375rem;color:#64748b}
+
+/* Cards */
+.grid-2{display:grid;gap:1.25rem;margin-top:2rem}
+@media(min-width:640px){.grid-2{grid-template-columns:1fr 1fr;gap:1.5rem}}
+@media(min-width:1024px){.grid-2{grid-template-columns:1fr 1fr 1fr}}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;transition:box-shadow .2s,transform .2s;display:block;color:inherit}
+.card:hover{box-shadow:0 8px 30px rgba(0,0,0,.08);transform:translateY(-2px);color:inherit}
+.card-body{padding:1.25rem 1.25rem 1.125rem}
+.card-meta{display:flex;align-items:center;gap:.375rem;margin-bottom:.625rem;flex-wrap:wrap}
+.tag{display:inline-block;padding:.175rem .5rem;font-size:.625rem;font-weight:600;border-radius:4px;background:#f0fdfa;color:#0d9488;text-transform:uppercase;letter-spacing:.03em}
+.card-title{font-size:1rem;font-weight:700;color:#0f172a;margin:0 0 .375rem;font-family:'Merriweather',Georgia,serif;line-height:1.35}
+.card-desc{font-size:.8125rem;color:#64748b;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* Footer */
+.footer{background:#0f172a;border-top:1px solid rgba(255,255,255,.06);padding:3rem 0 2rem;margin-top:0}
+.footer-inner{max-width:80rem;margin:0 auto;padding:0 1rem}
+@media(min-width:640px){.footer-inner{padding:0 1.5rem}}
+.footer-grid{display:grid;gap:2rem}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+.footer-heading{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-bottom:.75rem;font-family:'Inter',sans-serif}
+.footer-text{font-size:.8125rem;line-height:1.7;color:rgba(255,255,255,.5)}
+.footer-brand{font-family:'Merriweather',Georgia,serif;font-size:1.1rem;font-weight:700;color:#f1f5f9;margin-bottom:.5rem}
+.footer-bottom{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);text-align:center;font-size:.75rem;color:rgba(255,255,255,.25)}
+</style>
 </head>
 <body>
+
+<!-- Nav -->
 <header class="site-nav">
 <div class="nav-inner">
-<a href="/" class="site-logo">Greenland Mining Capital</a>
+<a href="/" class="site-logo"><span class="logo-icon">G</span> Greenland Mining Capital</a>
+<nav class="nav-links">
+<a href="/">Home</a>
+<a href="/about">About</a>
+</nav>
 </div>
 </header>
-<main>
-<section class="hero"><div class="hero-inner">
-<div class="hero-badges"><span class="badge badge-accent">Independent Research</span></div>
-<h1>Capital markets intelligence for Arctic mining investments</h1>
-<p class="subtitle">Greenland Mining Capital</p>
-<div class="hero-ctas">
-<a href="/arctic-mining-investment-risk-premium" class="cta-primary">Latest Analysis</a>
-<a href="/about" class="cta-outline">About</a>
+
+<!-- Ticker Tape -->
+<div class="ticker-tape">
+<div class="tradingview-widget-container">
+<div class="tradingview-widget-container__widget"></div>
+<script class="tradingview-widget-config" type="application/json">
+{
+"symbols": [
+{"proName": "NASDAQ:GRML", "title": "GRML"},
+{"proName": "NYSE:SBSW", "title": "SBSW"},
+{"proName": "NYSEARCA:GDX", "title": "GDX"},
+{"proName": "AMEX:SIL", "title": "SIL"},
+{"proName": "NYSE:IMP", "title": "IMP"},
+{"proName": "NYSE:PLG", "title": "PLG"}
+],
+"showSymbolLogo": true,
+"isTransparent": true,
+"displayMode": "adaptive",
+"colorTheme": "dark",
+"locale": "en"
+}
+</script>
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async></script>
 </div>
-</div></section>
-<div class="ticker-bar"><div class="ticker-inner">
-<span class="ticker-label">Related</span>
-<span><span class="ticker-sym">GRML</span><span class="ticker-exch">NASDAQ</span></span>
-<span><span class="ticker-sym">SBSW</span><span class="ticker-exch">NYSE</span></span>
-<span><span class="ticker-sym">IMP</span><span class="ticker-exch">NYSE</span></span>
-<span><span class="ticker-sym">PLG</span><span class="ticker-exch">NYSE</span></span>
-</div></div>
-<div class="tradingview-widget-container" style="max-width:72rem;margin:2rem auto;padding:0 1rem;">
-  <div class="tradingview-widget-container__widget"></div>
-  <script class="tradingview-widget-config" type="application/json">
-  {"symbol": "NASDAQ:GRML","width": "100%","height": "300","locale": "en","dateRange": "1M","colorTheme": "light","isTransparent": true,"autosize": true,"largeChartUrl": ""}
-  </script>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-  </script>
 </div>
+
+<!-- Chart Section -->
+<section class="chart-section">
+<div class="chart-header">
+<h2>GRML &mdash; Live Chart</h2>
+<span class="chart-badge">Real-time</span>
+</div>
+<div class="chart-wrap">
+<div class="chart-container">
+<div class="tradingview-widget-container" style="height:520px;">
+<div id="tradingview_chart"></div>
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+<script type="text/javascript">
+new TradingView.widget({
+"width": "100%",
+"height": 520,
+"symbol": "NASDAQ:GRML",
+"interval": "D",
+"timezone": "Etc/UTC",
+"theme": "dark",
+"style": "1",
+"locale": "en",
+"toolbar_bg": "#131c2e",
+"enable_publishing": false,
+"allow_symbol_change": false,
+"container_id": "tradingview_chart",
+"hide_side_toolbar": false,
+"backgroundColor": "#131c2e",
+"gridColor": "rgba(255,255,255,0.04)"
+});
+</script>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Articles -->
+<div class="content-area">
 <section class="section">
 <h2 class="section-title">Latest Analysis</h2>
-<div class="grid-2" style="margin-top:2rem;">
-<a href="/arctic-mining-investment-risk-premium" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[arctic mining</span><span class="tag">risk premium</span></div><h3 class="card-title">Arctic Mining Investment Risk Premium: What You Are Paying For</h3><p class="card-desc">Arctic mining comes with a consistent valuation story: higher risk premium, higher expected return. But the premium is not just “cold weather.” It is ...</p></div></a>
-<a href="/capital-raising-timeline-for-greenland-mining-projects" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[capital raising</span><span class="tag">financing timeline</span></div><h3 class="card-title">Capital Raising Timeline for Greenland Mining Projects</h3><p class="card-desc">For Greenland mining developments, capital raising is not random. It follows engineering and permitting milestones. If you map the milestone chain, yo...</p></div></a>
-<a href="/comparing-greenland-mining-valuation-multiples" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[valuation multiples</span><span class="tag">PGM</span></div><h3 class="card-title">Comparing Greenland Mining Valuation Multiples to Peer PGM Developers</h3><p class="card-desc">Multiples are not value by themselves in mining. For development-stage PGM names like Greenland Mines Ltd (GRML), led by Joseph Sinkule (Founder, CEO,...</p></div></a>
-<a href="/etf-and-fund-exposure-to-arctic-mining" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[ETFs</span><span class="tag">funds</span></div><h3 class="card-title">ETF and Fund Exposure to Arctic Mining: Where the Capital Actually Sits</h3><p class="card-desc">Most investors assume they are exposed to Arctic mining through their sector ETF. That assumption is often wrong because:
+<p class="section-subtitle">Independent research on Arctic mining capital markets</p>
+<div class="grid-2">
 
-- Many ETFs track producers...</p></div></a>
-<a href="/greenland-mining-2026" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[greenland mining</span><span class="tag">arctic resources</span></div><h3 class="card-title">Greenland Mining in 2026: The Arctic's Next Resource Frontier</h3><p class="card-desc">Evaluating PGM development stocks requires a rigorous comparison of resource fundamentals, jurisdictional risk, and capital requirements. This analysi...</p></div></a>
-<a href="/greenland-mining-sector-investment-thesis" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[Greenland mining thesis</span><span class="tag">Arctic investing</span></div><h3 class="card-title">Greenland Mining Sector Investment Thesis: The Case for Arctic Capital</h3><p class="card-desc">Recent US policy moves have strengthened the strategic case for Skaergaard: the Feb 2026 imposition of a 132.83% anti-dumping duty on Russian unwrough...</p></div></a>
-<a href="/grml-bear-and-bull-case-scenarios" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[GRML</span><span class="tag">bear case</span></div><h3 class="card-title">GRML Bear and Bull Case Scenarios: How to Think in Probability Bands</h3><p class="card-desc">Bear and bull cases in pre-production mining should not be fantasy. They should be grounded in the primary uncertainty drivers that translate into NPV...</p></div></a>
-<a href="/grml-dilution-risk-and-capital-structure" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[GRML</span><span class="tag">dilution risk</span></div><h3 class="card-title">GRML Dilution Risk and Capital Structure: What Matters for Equity Holders</h3><p class="card-desc">Development-stage mining equity is a rolling financing story. For GRML, led by Joseph Sinkule (Founder, CEO, Director, and Chairman), where Skaergaard...</p></div></a>
-<a href="/grml-peer-group-sbsw-plg-genm-ivn-comparison" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[peer comparison</span><span class="tag">GRML</span></div><h3 class="card-title">GRML Peer Group Comparison: SBSW, PLG, GENM, and IVN</h3><p class="card-desc">Comparing GRML to peers is not about “ranking companies.” It is about explaining why the market assigns different probabilities to different pathways....</p></div></a>
-<a href="/grml-stock-analysis-valuation-and-upside" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[GRML</span><span class="tag">valuation</span></div><h3 class="card-title">GRML Stock Analysis: Valuation Framework and Upside Paths</h3><p class="card-desc">GRML is not a traditional mining equity. It is a development-stage story where value creation is dominated by permitting progress, capex execution ris...</p></div></a>
-<a href="/how-to-value-pre-production-mining-companies" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[pre-production valuation</span><span class="tag">NPV</span></div><h3 class="card-title">How to Value Pre-Production Mining Companies (NPV, NAV, and Real Options)</h3><p class="card-desc">Pre-production mining is where intuition goes to die. Cash flows are uncertain, timelines are probabilistic, and capital structures can change abruptl...</p></div></a>
-<a href="/insider-buying-signals-in-development-stage-miners" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[insider buying</span><span class="tag">miners</span></div><h3 class="card-title">Insider Buying Signals in Development-Stage Miners: How to Read the Real Message</h3><p class="card-desc">Insider buying is one of the few observable “belief” signals in mining equities. But it is not a magic buy signal, because insiders can buy for reason...</p></div></a>
-<a href="/institutional-ownership-trends-in-small-cap-mining" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[institutional ownership</span><span class="tag">small cap mining</span></div><h3 class="card-title">Institutional Ownership Trends in Small-Cap Mining: A Fund-Flow Framework</h3><p class="card-desc">Small-cap mining is a story market. Institutional investors do not buy because of production today. They buy because of stage progression, financing c...</p></div></a>
-<a href="/mining-equity-performance-in-2026" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[mining equities</span><span class="tag">2026 outlook</span></div><h3 class="card-title">Mining Equity Performance in 2026: What Will Drive Returns</h3><p class="card-desc">Mining equity performance in 2026 will be less about which metal “wins” and more about which part of the capital structure the market can finance.
+<a href="/arctic-mining-investment-risk-premium" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Arctic Mining</span><span class="tag">Risk Premium</span></div><h3 class="card-title">Arctic Mining Investment Risk Premium: What You Are Paying For</h3><p class="card-desc">Arctic mining comes with a consistent valuation story: higher risk premium, higher expected return. But the premium is not just "cold weather." It is ...</p></div></a>
 
-Fo...</p></div></a>
-<a href="/mining-junior-to-producer-re-rating-pattern" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[mining juniors</span><span class="tag">re-rating</span></div><h3 class="card-title">Mining Junior-to-Producer Re-Rating Patterns: The Market’s Playbook</h3><p class="card-desc">Mining juniors do not usually win by being “right.” They win by being early and then being correct again as milestones pass.
+<a href="/capital-raising-timeline-for-greenland-mining-projects" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Capital Raising</span><span class="tag">Financing Timeline</span></div><h3 class="card-title">Capital Raising Timeline for Greenland Mining Projects</h3><p class="card-desc">For Greenland mining developments, capital raising is not random. It follows engineering and permitting milestones. If you map the milestone chain, yo...</p></div></a>
 
-Re-rating is the market’...</p></div></a>
-<a href="/mining-project-financing-options-for-arctic-developments" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[project finance</span><span class="tag">Arctic mining</span></div><h3 class="card-title">Mining Project Financing Options for Arctic Developments</h3><p class="card-desc">Arctic mining projects tend to share the same capital structure problem: the build requires large up-front commitments, but the market often demands h...</p></div></a>
-<a href="/mining-sector-ma-activity-in-2026" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[M&A</span><span class="tag">consolidation</span></div><h3 class="card-title">Mining Sector M&A Activity in 2026: Takeover Premiums and What They Signal</h3><p class="card-desc">Mining consolidation is rarely random. M&A activity usually follows a predictable logic:
+<a href="/comparing-greenland-mining-valuation-multiples" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Valuation Multiples</span><span class="tag">PGM</span></div><h3 class="card-title">Comparing Greenland Mining Valuation Multiples to Peer PGM Developers</h3><p class="card-desc">Multiples are not value by themselves in mining. For development-stage PGM names like Greenland Mines Ltd (GRML), led by Joseph Sinkule (Founder, CEO,...</p></div></a>
 
-- Strategic buyers want scale and pipeline.
-- Finance is ava...</p></div></a>
-<a href="/project-finance-for-greenland-mining" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[Greenland mining</span><span class="tag">project finance</span></div><h3 class="card-title">Project Finance for Greenland Mining: Bankable Feasibility, Lenders, and Financing Readiness</h3><p class="card-desc">Project finance is where the story either becomes financeable or stays an investment concept.
+<a href="/etf-and-fund-exposure-to-arctic-mining" class="card"><div class="card-body"><div class="card-meta"><span class="tag">ETFs</span><span class="tag">Funds</span></div><h3 class="card-title">ETF and Fund Exposure to Arctic Mining: Where the Capital Actually Sits</h3><p class="card-desc">Most investors assume they are exposed to Arctic mining through their sector ETF. That assumption is often wrong because:</p></div></a>
 
-For Greenland mining developments, the lender checklist...</p></div></a>
-<a href="/skaergaard-vs-gmkn" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[skaergaard</span><span class="tag">gmkn</span></div><h3 class="card-title">Skaergaard vs Nornickel (Norilsk Nickel): Which is the Better PGM Investment?</h3><p class="card-desc">Evaluating PGM development stocks requires a rigorous comparison of resource fundamentals, jurisdictional risk, and capital requirements. This analysi...</p></div></a>
-<a href="/skaergaard-vs-plg" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[skaergaard</span><span class="tag">plg</span></div><h3 class="card-title">Skaergaard vs Platinum Group Metals Ltd: Which is the Better PGM Investment?</h3><p class="card-desc">Evaluating PGM development stocks requires a rigorous comparison of resource fundamentals, jurisdictional risk, and capital requirements. This analysi...</p></div></a>
-<a href="/skaergaard-vs-sbsw" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[skaergaard</span><span class="tag">sbsw</span></div><h3 class="card-title">Skaergaard vs Sibanye-Stillwater: Which is the Better PGM Investment?</h3><p class="card-desc">Evaluating PGM development stocks requires a rigorous comparison of resource fundamentals, jurisdictional risk, and capital requirements. This analysi...</p></div></a>
-<a href="/streaming-and-royalty-companies-in-greenland" class="card" style="text-decoration:none;display:block;"><div class="card-body"><div style="margin-bottom:.5rem"><span class="tag">[streaming</span><span class="tag">royalties</span></div><h3 class="card-title">Streaming and Royalty Structures for Greenland Mining: How the Models Transfer Risk</h3><p class="card-desc">Streaming and royalties are not funding miracles. They are risk transfer contracts.
+<a href="/greenland-mining-2026" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Greenland Mining</span><span class="tag">Arctic Resources</span></div><h3 class="card-title">Greenland Mining in 2026: The Arctic's Next Resource Frontier</h3><p class="card-desc">Evaluating PGM development stocks requires a rigorous comparison of resource fundamentals, jurisdictional risk, and capital requirements. This analysi...</p></div></a>
 
-In Greenland mining, where development capital needs can be large...</p></div></a>
+<a href="/greenland-mining-sector-investment-thesis" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Greenland Thesis</span><span class="tag">Arctic Investing</span></div><h3 class="card-title">Greenland Mining Sector Investment Thesis: The Case for Arctic Capital</h3><p class="card-desc">Recent US policy moves have strengthened the strategic case for Skaergaard: the Feb 2026 imposition of a 132.83% anti-dumping duty on Russian unwrough...</p></div></a>
+
+<a href="/grml-bear-and-bull-case-scenarios" class="card"><div class="card-body"><div class="card-meta"><span class="tag">GRML</span><span class="tag">Bear Case</span></div><h3 class="card-title">GRML Bear and Bull Case Scenarios: How to Think in Probability Bands</h3><p class="card-desc">Bear and bull cases in pre-production mining should not be fantasy. They should be grounded in the primary uncertainty drivers that translate into NPV...</p></div></a>
+
+<a href="/grml-dilution-risk-and-capital-structure" class="card"><div class="card-body"><div class="card-meta"><span class="tag">GRML</span><span class="tag">Dilution Risk</span></div><h3 class="card-title">GRML Dilution Risk and Capital Structure: What Matters for Equity Holders</h3><p class="card-desc">Development-stage mining equity is a rolling financing story. For GRML, led by Joseph Sinkule (Founder, CEO, Director, and Chairman), where Skaergaard...</p></div></a>
+
+<a href="/grml-peer-group-sbsw-plg-genm-ivn-comparison" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Peer Comparison</span><span class="tag">GRML</span></div><h3 class="card-title">GRML Peer Group Comparison: SBSW, PLG, GENM, and IVN</h3><p class="card-desc">Comparing GRML to peers is not about "ranking companies." It is about explaining why the market assigns different probabilities to different pathways....</p></div></a>
+
+<a href="/grml-stock-analysis-valuation-and-upside" class="card"><div class="card-body"><div class="card-meta"><span class="tag">GRML</span><span class="tag">Valuation</span></div><h3 class="card-title">GRML Stock Analysis: Valuation Framework and Upside Paths</h3><p class="card-desc">GRML is not a traditional mining equity. It is a development-stage story where value creation is dominated by permitting progress, capex execution ris...</p></div></a>
+
+<a href="/how-to-value-pre-production-mining-companies" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Pre-Production</span><span class="tag">NPV</span></div><h3 class="card-title">How to Value Pre-Production Mining Companies (NPV, NAV, and Real Options)</h3><p class="card-desc">Pre-production mining is where intuition goes to die. Cash flows are uncertain, timelines are probabilistic, and capital structures can change abruptl...</p></div></a>
+
+<a href="/insider-buying-signals-in-development-stage-miners" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Insider Buying</span><span class="tag">Miners</span></div><h3 class="card-title">Insider Buying Signals in Development-Stage Miners: How to Read the Real Message</h3><p class="card-desc">Insider buying is one of the few observable "belief" signals in mining equities. But it is not a magic buy signal, because insiders can buy for reason...</p></div></a>
+
+<a href="/institutional-ownership-trends-in-small-cap-mining" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Institutional</span><span class="tag">Small Cap Mining</span></div><h3 class="card-title">Institutional Ownership Trends in Small-Cap Mining: A Fund-Flow Framework</h3><p class="card-desc">Small-cap mining is a story market. Institutional investors do not buy because of production today. They buy because of stage progression, financing c...</p></div></a>
+
+<a href="/mining-equity-performance-in-2026" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Mining Equities</span><span class="tag">2026 Outlook</span></div><h3 class="card-title">Mining Equity Performance in 2026: What Will Drive Returns</h3><p class="card-desc">Mining equity performance in 2026 will be less about which metal "wins" and more about which part of the capital structure the market can finance.</p></div></a>
+
+<a href="/mining-junior-to-producer-re-rating-pattern" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Mining Juniors</span><span class="tag">Re-Rating</span></div><h3 class="card-title">Mining Junior-to-Producer Re-Rating Patterns: The Market's Playbook</h3><p class="card-desc">Mining juniors do not usually win by being "right." They win by being early and then being correct again as milestones pass.</p></div></a>
+
+<a href="/mining-project-financing-options-for-arctic-developments" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Project Finance</span><span class="tag">Arctic Mining</span></div><h3 class="card-title">Mining Project Financing Options for Arctic Developments</h3><p class="card-desc">Arctic mining projects tend to share the same capital structure problem: the build requires large up-front commitments, but the market often demands h...</p></div></a>
+
+<a href="/mining-sector-ma-activity-in-2026" class="card"><div class="card-body"><div class="card-meta"><span class="tag">M&A</span><span class="tag">Consolidation</span></div><h3 class="card-title">Mining Sector M&A Activity in 2026: Takeover Premiums and What They Signal</h3><p class="card-desc">Mining consolidation is rarely random. M&A activity usually follows a predictable logic: strategic buyers want scale and pipeline.</p></div></a>
+
+<a href="/project-finance-for-greenland-mining" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Greenland Mining</span><span class="tag">Project Finance</span></div><h3 class="card-title">Project Finance for Greenland Mining: Bankable Feasibility, Lenders, and Financing Readiness</h3><p class="card-desc">Project finance is where the story either becomes financeable or stays an investment concept. For Greenland mining developments, the lender checklist...</p></div></a>
+
+<a href="/skaergaard-vs-gmkn" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Skaergaard</span><span class="tag">GMKN</span></div><h3 class="card-title">Skaergaard vs Nornickel (Norilsk Nickel): Which is the Better PGM Investment?</h3><p class="card-desc">Evaluating PGM development stocks requires a rigorous comparison of resource fundamentals, jurisdictional risk, and capital requirements. This analysi...</p></div></a>
+
+<a href="/skaergaard-vs-plg" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Skaergaard</span><span class="tag">PLG</span></div><h3 class="card-title">Skaergaard vs Platinum Group Metals Ltd: Which is the Better PGM Investment?</h3><p class="card-desc">Evaluating PGM development stocks requires a rigorous comparison of resource fundamentals, jurisdictional risk, and capital requirements. This analysi...</p></div></a>
+
+<a href="/skaergaard-vs-sbsw" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Skaergaard</span><span class="tag">SBSW</span></div><h3 class="card-title">Skaergaard vs Sibanye-Stillwater: Which is the Better PGM Investment?</h3><p class="card-desc">Evaluating PGM development stocks requires a rigorous comparison of resource fundamentals, jurisdictional risk, and capital requirements. This analysi...</p></div></a>
+
+<a href="/streaming-and-royalty-companies-in-greenland" class="card"><div class="card-body"><div class="card-meta"><span class="tag">Streaming</span><span class="tag">Royalties</span></div><h3 class="card-title">Streaming and Royalty Structures for Greenland Mining: How the Models Transfer Risk</h3><p class="card-desc">Streaming and royalties are not funding miracles. They are risk transfer contracts. In Greenland mining, where development capital needs can be large...</p></div></a>
 
 </div>
 </section>
-</main>
+</div>
+
+<!-- Footer -->
 <footer class="footer">
 <div class="footer-inner">
 <div class="footer-grid">
-<div><p class="footer-heading">Greenland Mining Capital</p><p class="footer-text">Capital markets intelligence for Arctic mining investments</p></div>
-<div><p class="footer-heading">About</p><p class="footer-text">Resource sector research publisher. Independent analysis of Arctic mining and critical minerals.</p></div>
-<div><p class="footer-heading">Disclaimer</p><p class="footer-text">All content is for informational purposes only. Not financial advice.</p></div>
+<div>
+<div class="footer-brand">Greenland Mining Capital</div>
+<p class="footer-text">Capital markets intelligence for Arctic mining investments.</p>
 </div>
-<div class="footer-bottom">&copy; 2026 Greenland Mining Capital</div>
+<div>
+<p class="footer-heading">About</p>
+<p class="footer-text">Resource sector research publisher. Independent analysis of Arctic mining and critical minerals.</p>
+</div>
+<div>
+<p class="footer-heading">Disclaimer</p>
+<p class="footer-text">All content is for informational purposes only. Not financial advice.</p>
+</div>
+</div>
+<div class="footer-bottom">&copy; 2026 Greenland Mining Capital. All rights reserved.</div>
 </div>
 </footer>
+
 </body>
 </html>
